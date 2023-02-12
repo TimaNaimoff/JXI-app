@@ -38,10 +38,10 @@ public class PeopleController {
 //        bookService.findByAuthorName("The Endless Book");
 //        bookService.findByPerson(peopleService.findAll().get(0));
 //        peopleService.test();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        PersonDetails personDetails=(PersonDetails)auth.getPrincipal();
-        System.out.println(personDetails.getPerson());
-        personerDao.testNPlus1();
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        PersonDetails personDetails=(PersonDetails)auth.getPrincipal();
+//        System.out.println(personDetails.getPerson());
+//        personerDao.testNPlus1();
         model.addAttribute("listOfPeoples",peopleService.findAll());
         return "/people/index";
     }

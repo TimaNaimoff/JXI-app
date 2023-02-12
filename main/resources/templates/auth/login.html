@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uz-UZ" style="height: auto; min-height: 100%;" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,follow">
+    <meta name="csrf-param" content="_csrf-frontend">
+    <meta name="csrf-token" content="fnjiNP6gOp3W6hTU2nBAzOTOkTmF3sPtxXr4LqB41pY6Is9mydBepZfTdpaXNgSpk7zJdd-nlduXS4h5kxvvpA==">
+    <title>Login | HEMIS Student axborot tizimi</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=islom_mamatov"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+
+                gtag('js', new Date());
+                gtag('config', 'islom_mamatov');
+            </script>
+    <link href="https://student.samtuit.uz/assets/1619872/css/bootstrap.css?v=1550073338" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/c85e0c3e/toastr.min.css?v=1439176619" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/85e30895/themes/smoothness/jquery-ui.css?v=1474004875" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/a7aa4f5a/chosen_v1.4.0/chosen.min.css?v=1621392405" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/a7aa4f5a/components-font-awesome/css/font-awesome.min.css?v=1401044116" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/dcb1f35a/css/font-awesome.min.css?v=1477324374" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/93dad33b/plugins/iCheck/flat/blue.css?v=1567066820" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/93dad33b/dist/css/AdminLTE.min.css?v=1567066820" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/93dad33b/dist/css/skins/skin-blue.min.css?v=1567066820" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/306687d9/src/0.1.4/css/checkBo.min.css?v=1465721329" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/2d73d43a/css/style.css?v=1666113475" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" rel="stylesheet">
+    <link href="https://student.samtuit.uz/assets/e2b63d9c/css/front.css?v=1661667056" rel="stylesheet">
+    <script>var globalMessages={"deleteItem":"Haqiqatan o‘chirmoqchimisiz?"};</script>    <style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style></head>
+<body class="login-page" style="height: auto; min-height: 100%;">
+<div class="login-bg">
+    <div class="login-box">
+        <div class="box box-success">
+            <div class="box-header">
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-transparent" data-toggle="dropdown">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="/logR">
+                                Русский</a>
+                        </li>
+
+                        <li>
+                            <a href="/logE">
+                                English                                </a>
+                        </li>
+
+                        <li class="divider"></li>
+                        <!--                        <li><a href="https://student.samtuit.uz/dashboard/reset">Parolni bekor qilish</a></li>-->
+                        <!--                        <li><a href="https://student.samtuit.uz/dashboard/diploma">Diplomni tekshirish</a></li>-->
+                        <!--                        <li><a href="https://student.samtuit.uz/dashboard/contract">Shartnomani olish</a></li>-->
+                    </ul>
+                </div>
+            </div>
+            <form id="login-form" method="post" action="/process_login">
+<!--                <input type="hidden" name="_csrf-frontend" value="fnjiNP6gOp3W6hTU2nBAzOTOkTmF3sPtxXr4LqB41pY6Is9mydBepZfTdpaXNgSpk7zJdd-nlduXS4h5kxvvpA==">            <div class="box-body">-->
+                <!-- <input type="hidden" name="_csrf" value="{{_csrf.token}}">-->
+                <img class="logo" src="https://hemis.samtuit.uz/static/crop/3/7/250_250_90_3712845262.png">
+                <h4 class="login-box-msg">Toshkent axborot texnologiyalari universiteti Samarqand filiali</h4>
+                <h5 class="login-box-msg">HEMIS Student axborot tizimi</h5>
+
+
+                <div class="form-group has-feedback field-login-login required has-success">
+                    <input type="text" id="login" class="form-control" name="login" placeholder="Talaba ID" aria-required="true" aria-invalid="false"><span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>                <div class="form-group has-feedback field-login-password required has-success">
+                <input type="password" id="password" class="form-control" name="password" placeholder="Parol" aria-required="true" aria-invalid="false"><span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+<!--            </div>-->
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="col col-xs-4 checkbo checkbo-ready">
+                            <label class="control-label cb-checkbox " for="rememberMe" style="margin-top: 6px">
+                                Eslab qolish<span class="cb-inner"><i><input type="checkbox" id="rememberMe" name="FormAdminLogin[rememberMe]" value="1"></i></span>                            </label>
+                        </div>
+                        <div class="col col-xs-8">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Kirish</button>                    </div>
+                    </div>
+                </div>
+            </form>        </div>
+    </div>
+</div>    <script src="https://student.samtuit.uz/assets/2d73d43a/js/jquery.js?v=1621392308"></script>
+<script src="https://student.samtuit.uz/assets/a039600/yii.js?v=1614872704"></script>
+<script src="https://student.samtuit.uz/assets/a039600/yii.validation.js?v=1614872704"></script>
+<script src="https://student.samtuit.uz/assets/a039600/yii.activeForm.js?v=1614872704"></script>
+<script src="https://student.samtuit.uz/assets/c85e0c3e/toastr.min.js?v=1439176619"></script>
+<script src="https://student.samtuit.uz/assets/85e30895/jquery-ui.js?v=1474004875"></script>
+<script src="https://student.samtuit.uz/assets/1619872/js/bootstrap.js?v=1550073338"></script>
+<script src="https://student.samtuit.uz/assets/a7aa4f5a/theia-sticky-sidebar/dist/theia-sticky-sidebar.min.js?v=1493119854"></script>
+<script src="https://student.samtuit.uz/assets/93dad33b/plugins/iCheck/icheck.min.js?v=1567066820"></script>
+<script src="https://student.samtuit.uz/assets/93dad33b/dist/js/adminlte.min.js?v=1567066820"></script>
+<script src="https://student.samtuit.uz/assets/306687d9/src/0.1.4/js/checkBo.min.js?v=1465721329"></script>
+<script src="https://student.samtuit.uz/assets/2d73d43a/js/ajax-modal-popup.js?v=1621392308"></script>
+<script src="https://student.samtuit.uz/assets/2d73d43a/js/jquery.floatThead.min.js?v=1663263404"></script>
+<script src="https://student.samtuit.uz/assets/2d73d43a/js/jquery.formatter.min.js?v=1621392308"></script>
+<script src="https://student.samtuit.uz/assets/2d73d43a/js/scripts.js?v=1663263404"></script>
+<script src="https://student.samtuit.uz/assets/2d73d43a/js/js.cookie.js?v=1621392308"></script>
+<script src="https://student.samtuit.uz/assets/e2b63d9c/js/front.js?v=1621392308"></script>
+<script>jQuery(function ($) {
+jQuery('#login-form').
+yiiActiveForm([{"id":"formstudentlogin-login",
+"name":"login","container":".field-formstudentlogin-login",
+"input":"#formstudentlogin-login","error":".help-block.help-block-error",
+"validate":function (attribute, value, messages, deferred, $form)
+{yii.validation.required(value, messages,
+{"message":"Login bo'sh bo'lishi mumkin emas"});}},
+{"id":"formstudentlogin-password","name":"password",
+"container":".field-formstudentlogin-password",
+"input":"#formstudentlogin-password","error":".help-block.help-block-error",
+"validate":function (attribute, value, messages, deferred, $form)
+{yii.validation.required(value, messages,
+{"message":"Parol bo'sh bo'lishi mumkin emas"});}}], []);
+toastr.success({"m":"Siz tizimdan chiqdingiz"}.m,
+{"m":null}.m, {"closeButton":false,"debug":false,
+"newestOnTop":false,"progressBar":false,
+"positionClass":"toast-bottom-right",
+"preventDuplicates":false,"onclick":null,"showDuration":
+"300","hideDuration":"1000","timeOut":"10000","extendedTimeOut":"1000",
+"showEasing":"swing","hideEasing":"linear","showMethod":"fadeIn",
+"hideMethod":"fadeOut"});
+});</script>
+
+</body></html>

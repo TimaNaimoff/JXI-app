@@ -1,7 +1,6 @@
 package edu.betty.JXIpet.services;
 
 import edu.betty.JXIpet.business.Person;
-import edu.betty.JXIpet.repo.PeopleRepository;
 import edu.betty.JXIpet.repo.PersonRepository;
 import edu.betty.JXIpet.security.PersonDetails;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +8,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PeopleDetailService implements UserDetailsService {

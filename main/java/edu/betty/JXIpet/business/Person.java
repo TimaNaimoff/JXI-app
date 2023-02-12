@@ -30,13 +30,12 @@ public class Person {
     @Getter
     @Setter
     private String name;
-    @Min(value=0,message="Let's go,age should be greatet that 0")
+//    @Min(value=0,message="Let's go,age should be greatet that 0")
     @Column(name="age")
-    @Getter
-    @Setter
+
     private int age;
-    @NotEmpty(message="Stupid trying,name should not be empty!")
-    @Email(message="Facepalm...")
+//    @NotEmpty(message="Stupid trying,name should not be empty!")
+//    @Email(message="Facepalm...")
     @Column(name="email")
     @Getter
     @Setter
@@ -85,16 +84,11 @@ public class Person {
     }
     public Person(){}
 
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-//                ", address='" + address + '\'' +
-                '}';
+    public Integer getAge() {
+        return age;
     }
 
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
