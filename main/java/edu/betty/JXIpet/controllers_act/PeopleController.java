@@ -58,6 +58,10 @@ public class PeopleController {
         model.addAttribute("person",new Person());
         return "/people/new";
     }
+    @GetMapping("/test")
+    public String testApp(Model model){
+        return "/people/test";
+    }
     @PostMapping
     public String create(@ModelAttribute("person")@Valid Person person, BindingResult resulter){
         personValidator.validate(person,resulter);

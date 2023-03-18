@@ -40,7 +40,6 @@ public class PeopleService {
         person.setMood(Mood.HAPPY);
         person.setCreatedTime(LocalDateTime.now());
         peopleRepository.save(person);
-
     }
     @Transactional
     public void update(int id,Person updatedPerson){

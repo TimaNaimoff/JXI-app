@@ -2,9 +2,11 @@ package edu.betty.JXIpet.security;
 
 import edu.betty.JXIpet.business.Person;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 
 
 public class PersonDetails implements UserDetails {
@@ -15,12 +17,13 @@ public class PersonDetails implements UserDetails {
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+
+        return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
     @Override
     public String getPassword() {
-        return this.person.getPassword().toString();
+        return this.person.getPassword();
     }
 
     @Override

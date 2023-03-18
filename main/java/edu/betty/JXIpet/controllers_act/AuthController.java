@@ -35,12 +35,13 @@ public class AuthController {
         return "/auth/registration";
     }
     @PostMapping("/registration")
-    public String performRegistration(@ModelAttribute("person") @Valid Person person,
-    BindingResult bindingResult){
+    public String performRegistration(@ModelAttribute("person")  Person person,
+                                      BindingResult bindingResult){
         personValidator.validate(person,bindingResult);
-        if(bindingResult.hasErrors()){
-            return "/auth/registration";
-        }
+//        if(bindingResult.hasErrors()){
+//            return "/auth/registration";
+//        }
+        System.out.println("Pre regging! " +person);
         registrationService.register(person);
         return "redirect:/auth/login";
     }

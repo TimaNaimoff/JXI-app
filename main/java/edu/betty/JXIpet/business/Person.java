@@ -43,7 +43,7 @@ public class Person {
     @Column(name="password")
     @Getter
     @Setter
-    private Integer password;
+    private String password;
     @Column(name="date_of_birth")
 //    @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd/MM/yyyy")
@@ -66,7 +66,10 @@ public class Person {
     @Getter
     @Setter
     private Boolean status;
-
+    @Column(name="role")
+    @Getter
+    @Setter
+    private String role;
     public Person(Integer id,String name,int age,String email,LocalDate dateOfBirth/*String address*/) {
         this.id=id;
         this.name=name;
@@ -90,5 +93,20 @@ public class Person {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", createdTime=" + createdTime +
+                ", mood=" + mood +
+                ", status=" + status +
+                '}';
     }
 }
