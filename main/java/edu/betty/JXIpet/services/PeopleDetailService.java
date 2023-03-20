@@ -24,16 +24,17 @@ public class PeopleDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println(username);
-        Optional<List<Person>> optional = peopleRepository.findByUserName(username);
+        System.out.println("USERNAME:"+username);
+        Optional<Person> optional = peopleRepository.findByUserName(username);
 //        System.out.println(optional.get().get(0).getName()+" : NAME optional");
         System.out.println(optional);
-        if(optional.get().isEmpty())throw new UsernameNotFoundException("Not found lok!");
-//        if(optional==null|| optional.isEmpty())throw new UsernameNotFoundException("User not found!");
+        if(optional.isEmpty())throw new UsernameNotFoundException("Not found lok!");
+
+        //        if(optional==null|| optional.isEmpty())throw new UsernameNotFoundException("User not found!");
 //        System.out.println(optional.get(0)+" OPTIONAL");
 //        String psw=optional.get().get(0).getPassword().replaceFirst("a","y");
 //        optional.get().get(0).setPassword(optional.get().get(0).getPassword().strip());
-        return new PersonDetails(optional.get().get(optional.get().size()-1));
+        return new PersonDetails(optional.get());
     }
 
 }

@@ -10,16 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class RegistrationService {
     private final PeopleRepository peopleRepository;
-//    private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
     @Autowired
-    public RegistrationService(PeopleRepository peopleRepository){//,PasswordEncoder passwordEncoder){
+    public RegistrationService(PeopleRepository peopleRepository,PasswordEncoder passwordEncoder){
         this.peopleRepository=peopleRepository;
-//        this.passwordEncoder=passwordEncoder;
+        this.passwordEncoder=passwordEncoder;
     }
     @Transactional
     public void register(Person person){
 //        System.out.println("FIRST PASSWORD: "+person.getPassword().replaceFirst("a","b"));
-//        person.setPassword(passwordEncoder.encode(person.getPassword()));
+        person.setPassword(passwordEncoder.encode(person.getPassword()));
 //        person.setPassword(person.getPassword().replaceFirst("a","y"));
         System.out.println("Encoding PASSWORD: "+person.getPassword());
         person.setRole("ROLE_USER");

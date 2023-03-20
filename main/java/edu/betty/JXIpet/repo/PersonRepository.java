@@ -12,5 +12,5 @@ import java.util.Optional;
 @Repository
 public interface PersonRepository extends JpaRepository<Person,Integer>{
     @Query("SELECT p FROM Person p WHERE p.name LIKE %:name%")
-    Optional<List<Person>> findByUserName(@Param("name")String name);
+    Optional<Person> findByUserName(@Param("name")String name);
 }

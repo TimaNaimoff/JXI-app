@@ -93,8 +93,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http)throws Exception{
         http.authorizeRequests().
+                antMatchers("/admin").hasRole("ADMIN").
+
                 antMatchers("/api/v1/developers","/auth/login","/error","/auth/registration","/people/test")
-                .permitAll().anyRequest().authenticated().and().
+                .permitAll().anyRequest().hasAnyRole("USER","ADMIN").and().
                 formLogin().loginPage("/auth/login").
                 loginProcessingUrl("/process_login")
                 .defaultSuccessUrl("/people",true)
@@ -109,11 +111,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(personDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance());
+        auth.userDetailsService(personDetailsService).passwordEncoder(getPasswordEncoder());//NoOpPasswordEncoder.getInstance());
 
     }
     @Bean
     public PasswordEncoder getPasswordEncoder(){
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 }

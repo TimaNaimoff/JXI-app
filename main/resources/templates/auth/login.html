@@ -8,8 +8,8 @@
 <body>
 <form name="f" method="post" action="/process_login">
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-    <label for="name">Введите имя пользователя</label>
-    <input type="text" name="name" id="name">
+    <label for="username">Введите имя пользователя</label>
+    <input type="text" name="username" id="username">
     <br/>
     <label for="password">
         Введите пароль
